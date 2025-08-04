@@ -48,7 +48,8 @@ async def telegram_webhook(req: Request):
     chat_id = message.get("chat", {}).get("id")
     text = message.get("text", "")
 
+    print(f"chat_id: {chat_id}")
+    
     if text == "/start":
         send_message(chat_id, "👋 Бот активен. Я буду присылать уведомления, когда акции изменяются на ±10%")
-        print(f"chat_id: {chat_id}")
-    return {"ok": True}
+ return {"ok": True}
